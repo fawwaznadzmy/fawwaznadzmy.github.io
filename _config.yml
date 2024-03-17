@@ -1,3 +1,30 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "" # the name of your site, e.g. ACME Corp.
+title: "Fawwaz Nadzmy" # the name of your site, e.g. ACME Corp.
+
+position: "Senior Software Engineer"
+profile-pic: "fawwaz-icon.png"
+description: "I firmly believe that data is more than just numbers; it's a powerful tool to fathom our users and their aspirations. To enrich my journey, I actively engage in community programs and events, immersing myself in the intricacies of analytics teams and honing my skills in data preparatio"
+nav-menu:
+- text: Portfolio
+  permalink: Portfolio
+- text: Publication
+  permalink: Publication
+- text: Certificate
+  permalink: Certificate
+- text: Blog
+  permalink: blog
+
+# use false to turn off any social media links
+twitter: https://twitter.com/
+facebook: https://facebook.com/
+instagram: https://instagram.com/
+github: https://github.com/
+linkedin: https://linkedin.com/
+medium: false
+google-scholar: false
+email: false
+
+# google analytics
+google-analytics: G-WCRC1TC2V5
+

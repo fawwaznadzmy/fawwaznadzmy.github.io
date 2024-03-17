@@ -1,11 +1,14 @@
 <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        {% for link in site.nav-menu %}
+          {% if page.permalink == {{link.permalink}} %}
+          <li class="nav-item"><a href="{{site.baseurl}}/{{link.permalink}}" class="nav-link active">{{link.text}}</a></li>
+          {% else %}
+            <li class="nav-item"><a href="{{site.baseurl}}/{{link.permalink}}" class="nav-link">{{link.text}}</a></li>
+          {% endif %}
+
+        {% endfor %}
       </ul>
     </header>
   </div>

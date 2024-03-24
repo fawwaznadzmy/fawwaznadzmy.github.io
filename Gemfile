@@ -4,3 +4,6 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem "jekyll"
+
+gem 'jekyll-seo-tag'
+gem 'jekyll-paginate'

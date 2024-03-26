@@ -8,8 +8,9 @@ permalink: /Certificate
 <div class="card w-100">
   <div class="card-body row">
    <div class="col-sm-2 d-flex justify-content-cente">
-       <img  style="width: 100%; height:90&" src="{{site.baseurl}}/assets/img/{{cert.platform}}"
+   <!--   <img  style="width: 100%; height:90&" src="{{site.baseurl}}/assets/img/{{cert.platform}}"
             alt="{{cert.title}}">
+            --> 
    </div>
     <div class="col-sm-8">
       <h5 class="card-title">{{cert.title}}</h5>

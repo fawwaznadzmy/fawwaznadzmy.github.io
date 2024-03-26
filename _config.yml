@@ -21,6 +21,9 @@ nav-menu:
 - text: // Blog
   url: Blog
   permalink: /Blog
+- text: // Contact
+  url: Contact
+  permalink: /Contact
 
 certificates:
 - title: "Google Advanced Data Analytics - Professional Certificate"

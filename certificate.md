@@ -4,11 +4,11 @@ title: certificate
 permalink: /Certificate
 ---
 
-  {% for cert in site.certificates %}
+{% for cert in site.certificates %}
 <div class="card w-100">
   <div class="card-body row">
-   <div class="col-sm-2 d-flex justify-content-center">
-       <img  style="width: 85px; height: 60px;" src="{{site.baseurl}}/assets/img/{{cert.platform}}"
+   <div class="col-sm-2 d-flex justify-content-cente">
+       <img  style="width: 100%; height:90&" src="{{site.baseurl}}/assets/img/{{cert.platform}}"
             alt="{{cert.title}}">
    </div>
     <div class="col-sm-8">
@@ -18,4 +18,4 @@ permalink: /Certificate
     </div>
   </div>
 </div>
-  {% endfor %}
+{% endfor %}

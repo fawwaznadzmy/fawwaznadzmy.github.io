@@ -4,10 +4,9 @@ title: "Fawwaz Nadzmy" # the name of your site, e.g. ACME Corp.
 logo-name: "FawwazNadzmy"
 
 logo: "fnadz-icon.png"
-welcome: "Welcome to my Journey"
+welcome: "Welcome to my page"
 position: "Senior Software Engineer"
 profile-pic: "fawwaz-icon.png"
-description: "Passionate and dedicated software engineer with strong problem-solving skills, an agile mindset, and a background in technology. Proven ability to navigate challenges and achieve optimal outcomes. Natural inclination for coaching and mentoring, fostering collaboration and growth in the team. Beyond technical expertise, I analyze data during my free time and indulge my creative side by designing software, websites, and apps, reflecting both technical prowess and enthusiasm for exploring new possibilities in technology."
 nav-menu:
 - text: // Portfolio
   url:
@@ -20,7 +19,7 @@ nav-menu:
   permalink: /Certificate
 - text: // Blog
   url: Blog
-  permalink: /Blog
+  permalink:  /blog
 - text: // Contact
   url: Contact
   permalink: /Contact
@@ -63,12 +62,44 @@ medium: false
 google-scholar: false
 email: false
 
+highlighter: rouge
+
+markdown: kramdown
+
+kramdown:
+  auto_ids: true
+  auto_toc: true
+
+#toc:
+#  list_id: my-toc-id # Default: "toc"
+#  list_class: my-list-class # Default: "section-nav"
+#  sublist_class: my-sublist-class # Default: no class for sublists
+#  item_class: my-item-class # Default: "toc-entry"
+#  item_prefix: item- # Default: "toc-":
+
+  
 # google analytics
 google-analytics: G-WCRC1TC2V5
 
 paginate: 5
-paginate_path: "/Blog/page:num/"
+paginate_path:  "/blog/page:num/"
 # jekyll plugins - no need to change
+
 plugins:
-    - jekyll-seo-tag
-    - jekyll-paginate
+  - jekyll-archives
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll/scholar
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-diagrams
+

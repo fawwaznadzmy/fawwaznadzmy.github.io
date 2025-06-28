@@ -38,9 +38,9 @@ $poppins-font: 'poppins', sans-serif;
 }
 
 .badge-top {
-  background-color: rgb(67, 67, 67);
-  color: white;
-  padding: 4px 17px;
+  //background-color: rgb(67, 67, 67);
+  color: rgb(2, 2, 2);
+  padding: 4px;
   text-align: left;
   border-radius: 30px;
 }
@@ -70,4 +70,97 @@ $poppins-font: 'poppins', sans-serif;
    50% { transform: rotate(10.0deg) }
    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
   100% { transform: rotate( 0.0deg) }
+}
+
+.demo-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.demo-bg {
+  opacity: 0.1;
+  position: absolute;
+  left: 0;
+  top: -10;
+  width: 40%;
+  object-position: 100px -100px;
+  height: auto;
+}
+
+.demo-content {
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #dee2e6;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.nav-item a{
+  color: $primary;
+}
+
+/* Optional: Add some styling to the table of contents */
+
+.my-toc-id {
+    list-style: none;
+    padding: 10px;
+}
+
+.item-li {
+    margin-bottom: 30px;
+}
+
+.my-item-class{
+  text-decoration: none;
+}
+
+.my-list-class {
+  background-color: #fff;
+  margin: 0px 0;
+  padding: 20px 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  list-style-type: none;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.my-sublist-class {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  
+}
+
+
+/* Style for TOC links */
+.toc-entry a {
+  display: block;
+  text-decoration: none !important;
+ // border: 1px solid #dee2e6;
+//  border-radius: 0.4rem;
+  padding: 0.5rem 0.75rem;
+//  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  color: $primary;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.toc-entry a:hover, .toc-entry a:focus {
+  background: #e2e6ea;
+  color: $secondary;
+ // box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-decoration: none;
+}
+
+#toc li {
+  list-style: none;
 }

@@ -1,17 +1,24 @@
-<div class="p-3 mb-2 bg-light rounded-3">
-    <div class="container-fluid row">
-      <div class="col-4 d-flex justify-content-center ">
-        <div class="">
-            <img class="img-thumbnail rounded-circle profile-bg" style="width: auto; height: 130px;" src="/assets/img/{{site.profile-pic}}"
-            alt="author profile image">
-        </div>
-      </div>  
-      <div class="col-8">
-        <div class="badge-top col-5 mb-2">{{site.welcome}} <div class="wave">👋</div></div>
-        <p class="display-6 poppins-font">{{site.position}}</p>
-        <p class="fs-6">{{site.description}}</p>
- 
-      </div>  
-    </div>
-</div>
+{% assign path = 'description.md' %}
+{% capture description %}
+    {% include_relative {{ path }} %}
+{% endcapture %}
 
+<div class="p-3 mb-2 bg-light rounded-3">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <!-- Profile Image -->
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+        <img class="img-thumbnail rounded-circle bg-secondary"
+             style="width: 130px; height: 130px; object-fit: cover;"
+             src="/assets/img/{{site.profile-pic}}"
+             alt="author profile image">
+      </div>
+      <!-- Description -->
+      <div class="col-12 col-md-8">
+        <div class="badge-top mb-2">{{site.welcome}} <span class="wave">👋</span></div>
+        <!-- <p class="display-6 poppins-font">{{site.position}}</p> -->
+        <p class="fs-6">{{ description | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</div>

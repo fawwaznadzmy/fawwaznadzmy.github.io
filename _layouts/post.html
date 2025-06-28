@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sticky Sidebar TOC -->
+    <nav class="col-md-3 d-none d-md-block bg-light" style="min-height: 100vh;">
+      <div class="position-sticky" style="top: 80px;">
+        {% include subheader.html %}
+        <div class="pt-3">
+          {% toc %}
+        </div>
+        <!-- Related Blog Posts -->
+        <div class="pt-4">
+          <h6 class="fw-bold">Related Posts</h6>
+          <ul class="list-unstyled">
+            {% if page.categories and page.categories.size > 0 and site.categories[page.categories[0]] %}
+              {% assign related_posts = site.categories[page.categories[0]] | where_exp: "post", "post.url != page.url" | sort: "date" | reverse %}
+              {% for post in related_posts limit:5 %}
+                <li class="mb-2">
+                  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" class="text-decoration-none">
+                    {{ post.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            {% else %}
+              <li class="mb-2 text-muted">No related posts found.</li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="mx-auto" style="max-width: 750px;">
+      <div class="pt-5 mb-1 rounded-3">
+        <h1 class="fw-bold">{{ page.title }}</h1>
+      </div>
+      <div class="mb-3 text-muted">
+        <i class="fa fa-calendar"></i>
+        {{ page.date | date: '%B %d, %Y' }}
+        {% if page.author %}• {{ page.author }}{% endif %}
+        {% if page.meta %}• {{ page.meta }}{% endif %}
+      </div>
+      <div>
+        {{ content }}
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Smooth scroll for TOC links -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('nav .toc-entry a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').replace('#', '');
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 70,
+          behavior: 'smooth'
+        });
+        history.replaceState(null, null, '#' + targetId);
+      }
+    });
+  });
+});
+</script>
+
+
+

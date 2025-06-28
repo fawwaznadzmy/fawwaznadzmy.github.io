@@ -1,15 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white">
+  <div class="container">
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center py-3" id="mainNavbar">
+      <ul class="navbar-nav mb-4 mb-md-0 gap-2">
+        {% for link in site.nav-menu %}
+          {% if page.permalink == link.permalink %}
+            <li class="nav-item">
+              <a href="{{site.baseurl}}/{{link.url}}" class="nav-link active fw-bold bg-primary text-white rounded px-4 py-2">{{link.text}}</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a href="{{site.baseurl}}/{{link.url}}" class="nav-link fw-bold text-primary px-4 py-2">{{link.text}}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+<!-- 
+<nav class="navbar navbar-expand-md navbar-light bg-light"></nav>
 <div class="container">
-    <header class="d-flex justify-content-center py-3 consolas-font fw-bolder">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> 
+  <div class="collapse navbar-collapse d-flex justify-content-center py-3 consolas-font fw-bolder" id="mainNavbar">
       <ul class="nav nav-pills">
         {% for link in site.nav-menu %}
 
           {% if page.permalink == link.permalink %}
-          <li class="nav-item"><a href="{{site.baseurl}}/{{link.url}}" class="nav-link active">{{link.text}}</a></li>
+          <li class="nav-item">
+            <a href="{{site.baseurl}}/{{link.url}}" class="nav-link active">{{link.text}}</a>
+          </li>
           {% else %}
-            <li class="nav-item"><a href="{{site.baseurl}}/{{link.url}}" class="nav-link">{{link.text}}</a></li>
+          <li class="nav-item">
+            <a href="{{site.baseurl}}/{{link.url}}" class="nav-link">{{link.text}}</a>
+          </li>
           {% endif %}
 
         {% endfor %}
       </ul>
-    </header>
+    </div>
   </div>
+</nav> -->
